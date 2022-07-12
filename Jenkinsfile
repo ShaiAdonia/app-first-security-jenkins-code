@@ -32,6 +32,10 @@ pipeline {
 
     stage('Build image') {
       steps {
+        sh '''apk add --update docker
+
+
+'''
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
